@@ -6,36 +6,46 @@ from django.contrib.auth.decorators import login_required
 from .models import Resume, Vacancy
 
 
+
+
 def index(request):
     return render(request, 'index.html')
 
 
-@login_required(login_url='login')
+# @login_required(login_url='login')
 def placeResume(request):
     if request.method == 'POST':
-        author = request.user
+
+        # author = request.user
+        #author=0
+        fullName=request.POST.get('fullName')
         date_of_birth = request.POST.get('date_of_birth')
         gender = request.POST.get('gender')
         speciality = request.POST.get('speciality')
         city = request.POST.get('city')
-        phone = request.POST.get('phone')
+        #phone = request.POST.get('phone')
         about = request.POST.get('about')
         experience = request.POST.get('experience')
         date = timezone.now()
+        if 'image' in request.FILES:
+            image = request.FILES['image']
+        else:
+            image = None
 
-        resume = Resume(author=author, date_of_birth=date_of_birth, gender=gender,
-                        specialty=speciality, city=city, phone=phone,
-                        desc=about, experience=experience, date=date)
+        resume = Resume(date_of_birth=date_of_birth, gender=gender,
+                        specialty=speciality, city=city,
+                        desc=about, experience=experience, image=image, date=date,
+                        fullName=fullName)
         resume.save()
         return redirect('index')
 
     return render(request, 'place-resume.html')
 
 
-@login_required(login_url='login')
+#@login_required(login_url='login')
 def placeVacancy(request):
     if request.method == 'POST':
-        employer = request.user
+        #employer = request.user
         company = request.POST.get('company')
         position = request.POST.get('position')
         salary = request.POST.get('salary')
@@ -44,7 +54,7 @@ def placeVacancy(request):
         contact = request.POST.get('contact')
         date = timezone.now()
 
-        vacancy = Vacancy(employer=employer, company=company, position=position, salary=salary,
+        vacancy = Vacancy( company=company, position=position, salary=salary,
                           desc=desc, adress=adress, contact=contact, date=date)
         vacancy.save()
         return redirect('index')
@@ -98,3 +108,24 @@ def detailVacancy(request, id):
         'vacancy': vacancy
     }
     return render(request, 'detail-vacancy.html', context)
+
+
+@login_required(login_url='login')
+def superUser(request):
+    resumes = Resume.objects.order_by('-date') 
+    vacancies = Vacancy.objects.order_by('-date')
+    return render(request, 'dash.html', {'resumes': resumes,'vacancies':vacancies})
+
+
+@login_required(login_url='login')
+def deleteResume(request,id):
+    deleteResume = Resume.objects.get(id=id)
+    deleteResume.delete() 
+    return redirect('dash')
+
+
+@login_required(login_url='login')
+def deleteVacancy(request,id):
+    deleteVacancy = Vacancy.objects.get(id=id)
+    deleteVacancy.delete()
+    return redirect('dash')

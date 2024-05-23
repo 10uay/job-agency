@@ -9,5 +9,8 @@ urlpatterns = [
     path('see-vacancies/', views.seeVacancies, name='see-offers'),
     path('see-resumes/', views.seeResumes, name='see-resumes'),
     path('see-resumes/<int:id>', views.detailResume, name='detail-resume'),
+    path('delete-resume/<int:id>', views.deleteResume, name='delete-resume'),
     path('see-vacancies/<int:id>', views.detailVacancy, name='detail-vacancy'),
+    path('delete-vacancy/<int:id>', views.deleteVacancy, name='delete-vacancy'),
+    path('super-user/', views.superUser, name='dash')
 ]

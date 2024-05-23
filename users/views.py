@@ -7,8 +7,9 @@ from django.contrib.auth import login, logout
 from django.contrib import messages
 
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.auth.decorators import login_required
 
-
+@login_required(login_url='login')
 def register(request):
     if request.method == 'POST':
         first_name = request.POST.get('first-name')
@@ -32,7 +33,7 @@ def logIn(request):
         try:
             u = User.objects.get(email=email, password=password)
             login(request, u)
-            return redirect('index')
+            return redirect('dash')
         except ObjectDoesNotExist:
             messages.info(request, 'Email or password is incorrect!')
 
@@ -41,7 +42,7 @@ def logIn(request):
 
 def logOut(request):
     logout(request)
-    return redirect('login')
+    return redirect('index')
 
 
 def profile(request):

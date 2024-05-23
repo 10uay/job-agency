@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Job Agency | See {{ title }}</title>
+    <title>SYGA | See {{ title }}</title>
     <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static '/fonts/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static '/fonts/ionicons.min.css' %}">
@@ -19,10 +19,11 @@
     <section class="article-list">
         <div class="container">
             <div class="intro">
-                <h2 class="text-center">Job Agency</h2>
+                <h2 class="text-center">SYGA</h2>
                     <h2 class="text-center">Look for {{ title }}</h2>
                 <form method="post">
                     <div class="input-group">
+                        {% csrf_token %}
                           <input type="search" class="form-control rounded" name="search" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
                           <button type="submit" class="btn btn-outline-primary">Find</button>
                     </div>
@@ -32,13 +33,23 @@
 
         {% for i in content %}
             <div class="card">
-                <h5 align="center" class="card-header">{{ i }}</h5>
+                {% if title == 'vacancies' %}
+                <h5 align="center" class="card-header"> {{i.company}}</h5>
+                {% else %}
+                <h5 align="center" class="card-header"> {{i.fullName}}</h5>
+                {% endif %}
                 <div class="card-body">
-                  <p class="card-text">{{ i.desc }}</p>
-                  <span class="badge rounded-pill bg-info text-dark">{{ i.salary }}</span>
+    
                    {% if title == 'vacancies' %}
+                   <p class="card-text "><span class="text-dark">Looking For :</span>  {{ i.position }}</p>
+                   <p class="card-text"><span class="text-dark">Requriments : </span>{{ i.desc }}</p>
+                   Salary : <span class="badge rounded-pill bg-info text-dark mb-2">{{ i.salary }}</span>
+                    </br>
                         <a href="{% url 'detail-vacancy' i.id %}" class="btn btn-outline-primary btn-sm">Respond</a>
                    {% else %}
+                   <p class="card-text "><span class="text-dark">Title :</span>  {{ i.specialty }}</p>  
+                   <p class="card-text "><span class="text-dark">City :</span>  {{ i.city }}</p>
+
                         <a href="{% url 'detail-resume' i.id %}" class="btn btn-outline-primary btn-sm">See</a>
                    {% endif %}
                 </div>
@@ -50,11 +61,11 @@
             <div class="social"><a href="https://www.instagram.com"><i class="icon ion-social-instagram"></i></a><a href="https://twitter.com"><i class="icon ion-social-twitter"></i></a><a href="https://www.facebook.com"><i class="icon ion-social-facebook"></i></a></div>
             <ul class="list-inline">
                 <li class="list-inline-item"><a href="{% url 'index' %}">Home</a></li>
-                <li class="list-inline-item"><a href="{% url 'login' %}">Log In</a></li>
+                <!-- <li class="list-inline-item"><a href="{% url 'login' %}">Log In</a></li>
                 <li class="list-inline-item"><a href="{% url 'register' %}">Sign Up</a></li>
-                <li class="list-inline-item"><a href="{% url 'logout' %}">Log Out</a></li>
+                <li class="list-inline-item"><a href="{% url 'logout' %}">Log Out</a></li> -->
             </ul>
-            <p class="copyright">JobAgency © 2021</p>
+            <p class="copyright">SYGA © 2024 BY:NAWAR</p>
         </footer>
     </section>
     <script src="{% static '/bootstrap/js/bootstrap.min.js' %}"></script>

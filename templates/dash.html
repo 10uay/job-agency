@@ -1,0 +1,132 @@
+{% load static %} {% load table_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>SYGA | See {{ title }}</title>
+    <link
+      rel="stylesheet"
+      href="{% static '/bootstrap/css/bootstrap.min.css' %}"
+    />
+    <link rel="stylesheet" href="{% static '/fonts/font-awesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/fonts/ionicons.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/Article-List.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/Footer-Basic.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/Social-Icons.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/datatables.min.css' %}" />
+  </head>
+
+  <body>
+    <section class="article-list">
+      <div class="container">
+        <div class="intro">
+          <h2 class="text-center">All Resumes</h2>
+        </div>
+
+        <table id="resumes" class="display">
+          <thead>
+            <tr>
+              <th>Full Name</th>
+              <th>Specialty</th>
+              <th>City</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in resumes %}
+            <tr>
+              <td>{{i.fullName}}</td>
+              <td>{{i.specialty}}</td>
+              <td>{{i.city}}</td>
+              <td>
+                <a
+                  href="{% url 'detail-resume' i.id %}"
+                  class="btn btn-outline-primary btn-sm"
+                  >Info</a
+                >
+                <a
+                  href="{% url 'delete-resume' i.id %}"
+                  class="btn btn-outline-danger btn-sm"
+                  >Delete</a
+                >
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="container">
+        <div class="intro">
+          <h2 class="text-center">All Vacancy</h2>
+        </div>
+
+        <table id="vacancy" class="display">
+          <thead>
+            <tr>
+              <th>Company</th>
+              <th>position</th>
+              <th>salary</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in vacancies %}
+            <tr>
+              <td>{{i.company}}</td>
+              <td>{{i.position}}</td>
+              <td>{{i.salary}}</td>
+              <td>
+                <a
+                  href="{% url 'detail-vacancy' i.id %}"
+                  class="btn btn-outline-primary btn-sm"
+                  >Info</a
+                >
+                <a
+                  href="{% url 'delete-vacancy' i.id %}"
+                  class="btn btn-outline-danger btn-sm"
+                  >Delete</a
+                >
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <footer class="footer-basic">
+        <div class="social">
+          <a href="https://www.instagram.com"
+            ><i class="icon ion-social-instagram"></i></a
+          ><a href="https://twitter.com"
+            ><i class="icon ion-social-twitter"></i></a
+          ><a href="https://www.facebook.com"
+            ><i class="icon ion-social-facebook"></i
+          ></a>
+        </div>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="{% url 'index' %}">Home</a></li>
+          <!-- <li class="list-inline-item"><a href="{% url 'login' %}">Log In</a></li>
+                <li class="list-inline-item"><a href="{% url 'register' %}">Sign Up</a></li>
+                <li class="list-inline-item"><a href="{% url 'logout' %}">Log Out</a></li> -->
+          <li class="list-inline-item">
+            <a href="{% url 'logout' %}">Log Out</a>
+          </li>
+        </ul>
+        <p class="copyright">SYGA © 2024 BY:NAWAR</p>
+      </footer>
+    </section>
+    <script src="{% static '/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static '/js/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static '/js/datatables.min.js' %}"></script>
+    <script>
+      $(document).ready(function () {
+        $("#resumes").DataTable();
+        $("#vacancy ").DataTable();
+      });
+    </script>
+  </body>
+</html>

@@ -6,29 +6,30 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Job Agency | Home</title>
+    <title>SYGA | Home</title>
     <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static '/fonts/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static '/fonts/ionicons.min.css' %}">
     <link rel="stylesheet" href="{% static '/css/Article-List.css' %}">
     <link rel="stylesheet" href="{% static '/css/Footer-Basic.css' %}">
     <link rel="stylesheet" href="{% static '/css/Social-Icons.css' %}">
+    <link rel="stylesheet" href="{% static '/css/Navbar.css' %}">
 </head>
 
-<body>
+<body>   
     <section class="article-list">
         <div class="container">
             <div class="intro">
-                <h2 class="text-center">Job Agency</h2>
+                <h2 class="text-center">Talent Acquisition: recruitment</h2>
                 {% if request.user.username %}
                     <h2 class="text-center">You are logged in as <a href="{% url 'profile' %}">{{ request.user.username }}</a></h2>
                 {% else %}
-                    <h2 class="text-center">Pleace login or sign up</h2>
+                    <!-- <h2 class="text-center">Pleace login or sign up</h2> -->
                 {% endif %}
                 <p class="text-center"></p>
             </div>
             <div class="row articles">
-                <div class="col-sm-6 col-md-4 item"><a href="{% url 'place-resume' %}"><img class="img-fluid" src="{% static '/img/desk.jpg' %}"></a>
+                <div class="col-sm-6 col-md-4 item"><a href="{% url 'place-resume' %}"><img class="img-fluid" src="{% static '/img/meeting.jpg' %}"></a>
                     <h3 class="name">Place Resume</h3>
                     <p class="description">Place your detailed resumes so&nbsp;employer can watch it<br><br><br></p><a class="action" href="{% url 'place-resume' %}"><i class="fa fa-arrow-circle-right"></i></a>
                 </div>
@@ -42,15 +43,61 @@
                 </div>
             </div>
         </div>
+        <div>
+            <style>
+                .CNMUBanners1 {background: linear-gradient(to right, #04776e 0%,#2247ad 100%);width: 300px;height: 250px;color: #fff 
+                !important
+                ;margin: 5px auto 10px !important;box-sizing: border-box;border: 5px solid #fff;box-shadow: 0 0 0 1px #bbb;display: block;text-align: center;padding: 10px;transition: none !important;max-width: 100%;text-decoration: none !important;overflow: hidden;}
+                .CNMUBanners1:hover {background: #000;color: #fff;}
+                .CNMUBanners1 b {margin-top: 50px;font-size: 40px;font-weight: normal;display: block;}
+                .CNMUBanners1 span {margin-top: 30px;font-size: 16px;display: block;}
+                </style>
+                
+                <a href="#" class="CNMUBanners1">
+                <b>هنا نضع الاعلان</b>
+                <span>اعلان</span>
+                </a>
+            </style>  
+            <style>
+                .CNMUBanners1 {background: linear-gradient(to right, #04776e 0%,#2247ad 100%);width: 300px;height: 250px;color: #fff 
+                !important
+                ;margin: 5px auto 10px !important;box-sizing: border-box;border: 5px solid #fff;box-shadow: 0 0 0 1px #bbb;display: block;text-align: center;padding: 10px;transition: none !important;max-width: 100%;text-decoration: none !important;overflow: hidden;}
+                .CNMUBanners1:hover {background: #000;color: #fff;}
+                .CNMUBanners1 b {margin-top: 50px;font-size: 40px;font-weight: normal;display: block;}
+                .CNMUBanners1 span {margin-top: 30px;font-size: 16px;display: block;}
+                </style>
+                
+                <a href="#" class="CNMUBanners1">
+                <b>هنا نضع الاعلان</b>
+                <span>اعلان</span>
+                </a>
+            </style>  
+                    <style>
+            .CNMUBanners1 {background: linear-gradient(to right, #04776e 0%,#2247ad 100%);width: 300px;height: 250px;color: #fff 
+            !important
+            ;margin: 5px auto 10px !important;box-sizing: border-box;border: 5px solid #fff;box-shadow: 0 0 0 1px #bbb;display: block;text-align: center;padding: 10px;transition: none !important;max-width: 100%;text-decoration: none !important;overflow: hidden;}
+            .CNMUBanners1:hover {background: #000;color: #fff;}
+            .CNMUBanners1 b {margin-top: 50px;font-size: 40px;font-weight: normal;display: block;}
+            .CNMUBanners1 span {margin-top: 30px;font-size: 16px;display: block;}
+            </style>
+            
+            <a href="#" class="CNMUBanners1">
+            <b>هنا نضع الاعلان</b>
+            <span>اعلان</span>
+            </a>
+        </style>  
+        </div>
+        
+ 
         <footer class="footer-basic">
             <div class="social"><a href="https://www.instagram.com"><i class="icon ion-social-instagram"></i></a><a href="https://twitter.com"><i class="icon ion-social-twitter"></i></a><a href="https://www.facebook.com"><i class="icon ion-social-facebook"></i></a></div>
             <ul class="list-inline">
                 <li class="list-inline-item"><a href="{% url 'index' %}">Home</a></li>
-                <li class="list-inline-item"><a href="{% url 'login' %}">Log In</a></li>
+                <!-- <li class="list-inline-item"><a href="{% url 'login' %}">Log In</a></li>
                 <li class="list-inline-item"><a href="{% url 'register' %}">Sign Up</a></li>
-                <li class="list-inline-item"><a href="{% url 'logout' %}">Log Out</a></li>
+                <li class="list-inline-item"><a href="{% url 'logout' %}">Log Out</a></li> -->
             </ul>
-            <p class="copyright">JobAgency © 2021</p>
+            <p class="copyright">SYGA © 2024 BY:NAWAR</p>
         </footer>
     </section>
     <script src="{% static '/bootstrap/js/bootstrap.min.js' %}"></script>

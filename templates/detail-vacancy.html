@@ -2,57 +2,73 @@
 
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>SYGA | {{ vacancy.position }}</title>
+    <link
+      rel="stylesheet"
+      href="{% static '/bootstrap/css/bootstrap.min.css' %}"
+    />
+    <link rel="stylesheet" href="{% static '/fonts/font-awesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/fonts/ionicons.min.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/Features-Clean.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/Footer-Basic.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/Social-Icons.css' %}" />
+  </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Job Agency | {{ vacancy.position }}</title>
-    <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static '/fonts/font-awesome.min.css' %}">
-    <link rel="stylesheet" href="{% static '/fonts/ionicons.min.css' %}">
-    <link rel="stylesheet" href="{% static '/css/Features-Clean.css' %}">
-    <link rel="stylesheet" href="{% static '/css/Footer-Basic.css' %}">
-    <link rel="stylesheet" href="{% static '/css/Social-Icons.css' %}">
-</head>
-
-<body>
+  <body>
     <section class="features-clean">
-        <div class="container">
-            <div class="intro">
-                <h2 class="text-center">{{ vacancy }}</h2>
-                <h4 class="text-center">{{ vacancy.desc }}</h4>
-            </div>
-            <div class="row features">
-                <div class="col-sm-6 col-lg-4 item"><i class="fa fa-map-marker icon"></i>
-                    <h3 class="name">{{ vacancy.adress }}</h3>
-                    <p class="description">Where you can find us</p>
-                </div>
-                <div class="col-sm-6 col-lg-4 item"><i class="fa fa-list-alt icon"></i>
-                    <h3 class="name">{{ vacancy.position }}</h3>
-                    <p class="description">Who we are looking for </p>
-                </div>
-                <div class="col-sm-6 col-lg-4 item"><i class="fa fa-leaf icon"></i>
-                    <h3 class="name">{{ vacancy.salary }}</h3>
-                    <p class="description">Salary we can offer</p>
-                </div>
-                <div class="col-sm-6 col-lg-4 item"><i class="fa fa-phone icon"></i>
-                    <h3 class="name">{{ vacancy.contact }}</h3>
-                    <p class="description">Contact Us</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="intro">
+          <h2 class="text-center">{{ vacancy.company }}</h2>
+          <h4 class="text-center">{{ vacancy.desc }}</h4>
         </div>
+        <div class="row features">
+          <div class="col-sm-6 col-lg-4 item">
+            <i class="fa fa-map-marker icon"></i>
+            <h3 class="name">{{ vacancy.adress }}</h3>
+            <p class="description">Where you can find us</p>
+          </div>
+          <div class="col-sm-6 col-lg-4 item">
+            <i class="fa fa-list-alt icon"></i>
+            <h3 class="name">{{ vacancy.position }}</h3>
+            <p class="description">Who we are looking for</p>
+          </div>
+          <div class="col-sm-6 col-lg-4 item">
+            <i class="fa fa-leaf icon"></i>
+            <h3 class="name">{{ vacancy.salary }}</h3>
+            <p class="description">Salary we can offer</p>
+          </div>
+          <div class="col-sm-6 col-lg-4 item">
+            <i class="fa fa-phone icon"></i>
+            <h3 class="name">{{ vacancy.contact }}</h3>
+            <p class="description">Contact Us</p>
+          </div>
+        </div>
+      </div>
 
-        <footer class="footer-basic">
-            <div class="social"><a href="https://www.instagram.com"><i class="icon ion-social-instagram"></i></a><a href="https://twitter.com"><i class="icon ion-social-twitter"></i></a><a href="https://www.facebook.com"><i class="icon ion-social-facebook"></i></a></div>
-            <ul class="list-inline">
-                <li class="list-inline-item"><a href="{% url 'index' %}">Home</a></li>
-                <li class="list-inline-item"><a href="{% url 'login' %}">Log In</a></li>
+      <footer class="footer-basic">
+        <div class="social">
+          <a href="https://www.instagram.com"
+            ><i class="icon ion-social-instagram"></i></a
+          ><a href="https://twitter.com"
+            ><i class="icon ion-social-twitter"></i></a
+          ><a href="https://www.facebook.com"
+            ><i class="icon ion-social-facebook"></i
+          ></a>
+        </div>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="{% url 'index' %}">Home</a></li>
+          <!-- <li class="list-inline-item"><a href="{% url 'login' %}">Log In</a></li>
                 <li class="list-inline-item"><a href="{% url 'register' %}">Sign Up</a></li>
-                <li class="list-inline-item"><a href="{% url 'logout' %}">Log Out</a></li>
-            </ul>
-            <p class="copyright">JobAgency © 2021</p>
-        </footer>
+                <li class="list-inline-item"><a href="{% url 'logout' %}">Log Out</a></li> -->
+        </ul>
+        <p class="copyright">SYGA © 2024 BY:NAWAR</p>
+      </footer>
     </section>
-</body>
-
+  </body>
 </html>
