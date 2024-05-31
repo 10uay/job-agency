@@ -16,13 +16,13 @@
     <link rel="stylesheet" href="{% static '/css/Navbar.css' %}">
 </head>
 
-<body>   
+<body>
     <section class="article-list">
         <div class="container">
             <div class="intro">
                 <h2 class="text-center">Talent Acquisition: recruitment</h2>
                 {% if request.user.username %}
-                    <h2 class="text-center">You are logged in as <a href="{% url 'profile' %}">{{ request.user.username }}</a></h2>
+                    <h2 class="text-center">You are logged in as <a href="{% url 'dash' %}">{{ request.user.username }}</a></h2>
                 {% else %}
                     <!-- <h2 class="text-center">Pleace login or sign up</h2> -->
                 {% endif %}
@@ -45,50 +45,50 @@
         </div>
         <div>
             <style>
-                .CNMUBanners1 {background: linear-gradient(to right, #04776e 0%,#2247ad 100%);width: 300px;height: 250px;color: #fff 
+                .CNMUBanners1 {background: linear-gradient(to right, #04776e 0%,#2247ad 100%);width: 300px;height: 250px;color: #fff
                 !important
                 ;margin: 5px auto 10px !important;box-sizing: border-box;border: 5px solid #fff;box-shadow: 0 0 0 1px #bbb;display: block;text-align: center;padding: 10px;transition: none !important;max-width: 100%;text-decoration: none !important;overflow: hidden;}
                 .CNMUBanners1:hover {background: #000;color: #fff;}
                 .CNMUBanners1 b {margin-top: 50px;font-size: 40px;font-weight: normal;display: block;}
                 .CNMUBanners1 span {margin-top: 30px;font-size: 16px;display: block;}
                 </style>
-                
+
                 <a href="#" class="CNMUBanners1">
                 <b>هنا نضع الاعلان</b>
                 <span>اعلان</span>
                 </a>
-            </style>  
+            </style>
             <style>
-                .CNMUBanners1 {background: linear-gradient(to right, #04776e 0%,#2247ad 100%);width: 300px;height: 250px;color: #fff 
+                .CNMUBanners1 {background: linear-gradient(to right, #04776e 0%,#2247ad 100%);width: 300px;height: 250px;color: #fff
                 !important
                 ;margin: 5px auto 10px !important;box-sizing: border-box;border: 5px solid #fff;box-shadow: 0 0 0 1px #bbb;display: block;text-align: center;padding: 10px;transition: none !important;max-width: 100%;text-decoration: none !important;overflow: hidden;}
                 .CNMUBanners1:hover {background: #000;color: #fff;}
                 .CNMUBanners1 b {margin-top: 50px;font-size: 40px;font-weight: normal;display: block;}
                 .CNMUBanners1 span {margin-top: 30px;font-size: 16px;display: block;}
                 </style>
-                
+
                 <a href="#" class="CNMUBanners1">
                 <b>هنا نضع الاعلان</b>
                 <span>اعلان</span>
                 </a>
-            </style>  
+            </style>
                     <style>
-            .CNMUBanners1 {background: linear-gradient(to right, #04776e 0%,#2247ad 100%);width: 300px;height: 250px;color: #fff 
+            .CNMUBanners1 {background: linear-gradient(to right, #04776e 0%,#2247ad 100%);width: 300px;height: 250px;color: #fff
             !important
             ;margin: 5px auto 10px !important;box-sizing: border-box;border: 5px solid #fff;box-shadow: 0 0 0 1px #bbb;display: block;text-align: center;padding: 10px;transition: none !important;max-width: 100%;text-decoration: none !important;overflow: hidden;}
             .CNMUBanners1:hover {background: #000;color: #fff;}
             .CNMUBanners1 b {margin-top: 50px;font-size: 40px;font-weight: normal;display: block;}
             .CNMUBanners1 span {margin-top: 30px;font-size: 16px;display: block;}
             </style>
-            
+
             <a href="#" class="CNMUBanners1">
             <b>هنا نضع الاعلان</b>
             <span>اعلان</span>
             </a>
-        </style>  
+        </style>
         </div>
-        
- 
+
+
         <footer class="footer-basic">
             <div class="social"><a href="https://www.instagram.com"><i class="icon ion-social-instagram"></i></a><a href="https://twitter.com"><i class="icon ion-social-twitter"></i></a><a href="https://www.facebook.com"><i class="icon ion-social-facebook"></i></a></div>
             <ul class="list-inline">

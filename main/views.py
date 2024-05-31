@@ -1,3 +1,4 @@
+import os 
 from django.shortcuts import render, HttpResponse, redirect
 from django.utils import timezone
 
@@ -29,6 +30,7 @@ def placeResume(request):
         date = timezone.now()
         if 'image' in request.FILES:
             image = request.FILES['image']
+            
         else:
             image = None
 

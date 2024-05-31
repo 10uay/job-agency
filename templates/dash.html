@@ -1,4 +1,4 @@
-{% load static %} {% load table_tags %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,6 +24,11 @@
     <section class="article-list">
       <div class="container">
         <div class="intro">
+          <h1 class="text-center">
+            <a href="{% url 'index' %}" class="btn btn-outline-primary btn-sm"
+              >Back to home page-></a
+            >
+          </h1>
           <h2 class="text-center">All Resumes</h2>
         </div>
 

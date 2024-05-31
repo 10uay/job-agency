@@ -1,6 +1,7 @@
-from django.urls import path
+from django.urls import path,include
 from . import views
-
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -14,3 +15,5 @@ urlpatterns = [
     path('delete-vacancy/<int:id>', views.deleteVacancy, name='delete-vacancy'),
     path('super-user/', views.superUser, name='dash')
 ]
+
+urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

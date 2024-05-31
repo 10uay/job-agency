@@ -17,7 +17,7 @@ class Resume(models.Model):
     desc = models.TextField('About')
     experience = models.IntegerField('Years of experience')
     date = models.DateTimeField('Date of placing')
-    image = models.ImageField(upload_to='static/resumes/', null=True, blank=True)
+    image = models.ImageField(null=True, blank=True)
 
     # def __str__(self):
     #     return f'{self.author.username} - {self.specialty}'
